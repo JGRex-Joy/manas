@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #334155;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 480px;
+    height: 85vh;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.header-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.header-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #f8fafc;
+    scroll-behavior: smooth;
+}
+
+.message {
+    max-width: 85%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background: #ffffff;
+    color: #1e293b;
+    border-radius: 18px 18px 18px 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: #b91c1c;
+    color: white;
+    border-radius: 18px 18px 4px 18px;
+    box-shadow: 0 2px 8px rgba(185, 28, 28, 0.2);
+}
+
+.input-area {
+    padding: 16px 20px;
+    background: #ffffff;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+}
+
+input[type="text"]:focus {
+    border-color: #b91c1c;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #b91c1c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+button svg {
+    width: 20px;
+    height: 20px;
+}
+
+button:hover {
+    background: #991b1b;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.typing-indicator {
+    display: none;
+    align-self: flex-start;
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 18px 18px 18px 4px;
+    border: 1px solid #e2e8f0;
+    gap: 6px;
+    align-items: center;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #94a3b8;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) { animation-delay: -0.32s; }
+.dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+/* Обновляем контейнер для идеальной работы на мобилках */
+body {
+    background: #e5e7eb;
+    height: 100dvh; /* Используем динамическую высоту */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 500px;
+    height: 90vh; /* На десктопе с отступами */
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Эффект для мобильных устройств (Адаптивка) */
+@media (max-width: 500px) {
+    .chat-container {
+        height: 100dvh;
+        max-width: 100%;
+        border-radius: 0;
+    }
+    .message {
+        max-width: 90%; /* Больше места для текста на узких экранах */
+    }
+}
+
+/* Добавляем легкую текстуру на фон чата */
+.chat-box {
+    background-color: #f3f4f6;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); /* Можно заменить на паттерн орнамента */
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Красивый скроллбар */
+.chat-box::-webkit-scrollbar {
+    width: 4px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* Анимация появления сообщений */
+.message {
+    animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Подсказки (Быстрые вопросы) */
+.suggestions {
+    display: flex;
+    gap: 8px;
+    padding: 8px 15px;
+    overflow-x: auto;
+    background: #fff;
+    white-space: nowrap;
+}
+.suggest-chip {
+    padding: 6px 12px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.suggest-chip:hover {
+    border-color: #b91c1c;
+}

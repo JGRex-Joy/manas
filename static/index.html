@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акыл Агай - Манас Эпосу</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="header-title">Акыл Агай</div>
+        <div class="header-subtitle">«Манас» эпосу боюнча жардамчы</div>
+        
+    </div>
+    
+    <div class="chat-box" id="chatBox">
+        <div class="message bot">Салам! Менин атым Акыл Агай. Мага "Манас" эпосунан болгон суроону берсең болот.</div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+    </div>
+    
+    <form class="input-area" id="chatForm">
+        <input type="text" id="userInput" placeholder="Билдирүү жазыңыз..." required autocomplete="off">
+        <button type="submit" id="sendBtn" title="Жөнөтүү">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+        </button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
