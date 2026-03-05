@@ -43,14 +43,14 @@ def ingest_book(book_path: Path, retries: int = 3) -> bool:
     for attempt in range(1, retries + 1):
         try:
             vector_store.add(ids, dense_vectors, sparse_vectors, payloads)
-            print(f"✅ Saved to Qdrant: {book_path.stem}")
+            print(f"✅ Saved to Qdrant: Manas")
             return True
         except Exception as e:
             print(f"⚠️ Retry {attempt}/{retries} failed: {e}")
             if attempt < retries:
                 time.sleep(5)
 
-    print(f"❌ Could not save: {book_path.stem}")
+    print(f"❌ Could not save: Manas")
     return False
 
 if __name__=="__main__":

@@ -1,10 +1,10 @@
 from src.shared.embedders.dense_embedder import dense_embedder
 from src.shared.embedders.sparse_embedder import sparse_embedder
 from src.shared.qdrant.vector_search import vector_search
-from retrieval.llm_service import llm_service
+from src.retrieval.llm_service import llm_service
 
 class RAGService:
-    async def ask(self, query: str, book_name: str) -> str:
+    async def ask(self, query: str) -> str:
         dense_vector = dense_embedder.embed(query)
         sparse_vector = sparse_embedder.embed(query)
         
