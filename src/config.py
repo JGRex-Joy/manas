@@ -30,8 +30,8 @@ class Settings(BaseSettings):
     PREFETCH_MULTIPLIER: int = 3
     
     # Chunking
-    CHUNK_SIZE: int = 600
-    CHUNK_OVERLAP: int = 100
+    CHUNK_SIZE: int = 800
+    CHUNK_OVERLAP: int = 120
     
     class Config:
         env_file = ".env"
