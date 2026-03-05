@@ -13,7 +13,7 @@ DATA_DIR = Path("data")
 
 def ingest_book(book_path: Path, retries: int = 3) -> bool:
     print(f"\n{'='*50}")
-    print(f"📖 Book: {book_path.stem}")
+    print(f"📖 Book: Manas")
     print(f"{'='*50}")
 
     loader = DocxLoader(path=str(book_path))
@@ -52,3 +52,6 @@ def ingest_book(book_path: Path, retries: int = 3) -> bool:
 
     print(f"❌ Could not save: {book_path.stem}")
     return False
+
+if __name__=="__main__":
+    ingest_book(book_path="data\manas.docx")
